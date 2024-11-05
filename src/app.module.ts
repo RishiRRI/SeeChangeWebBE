@@ -16,18 +16,9 @@ import { PaymentsModule } from './features/payments/payments.module';
     envFilePath: '.env',
     isGlobal: true,
   }),
-  // MongooseModule.forRoot(process.env.USER_DB, {
-  //   connectionName: 'See_Change_Web',
-  // }),
-  // MongooseModule.forRoot(process.env.ASSESSMENT_QUESTIONS_DB, {
-  //   connectionName: 'See_Change_Web',
-  // }),
-  // MongooseModule.forRoot(process.env.ASSESSMENT_RECORDS_DB, {
-  //   connectionName: 'See_Change_Web',
-  // }),
   MongooseModule.forRoot(process.env.See_Change_Web_DB, {
     connectionName: 'See_Change_Web',
-    serverSelectionTimeoutMS: 5000, // Adjust the timeout as necessary
+    // serverSelectionTimeoutMS: 5000, 
   }),  
     UserModule,
     AssessmentQuestionsModule,

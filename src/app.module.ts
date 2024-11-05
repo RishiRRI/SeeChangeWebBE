@@ -27,7 +27,8 @@ import { PaymentsModule } from './features/payments/payments.module';
   // }),
   MongooseModule.forRoot(process.env.See_Change_Web_DB, {
     connectionName: 'See_Change_Web',
-  }),
+    serverSelectionTimeoutMS: 5000, // Adjust the timeout as necessary
+  }),  
     UserModule,
     AssessmentQuestionsModule,
     AssessmentRecordsModule,

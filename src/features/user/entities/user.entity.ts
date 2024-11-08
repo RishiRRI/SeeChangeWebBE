@@ -32,6 +32,12 @@ export class User extends Document {
   @Prop({ type: [String], default: [] })
   pdfAccess: string[];
 
+  @Prop({ required: true, default: "newUser" })
+  feedbackStatus: string;
+
+  @Prop()
+  feedback: string;
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

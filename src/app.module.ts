@@ -16,7 +16,8 @@ import { PaymentsModule } from './features/payments/payments.module';
     envFilePath: '.env',
     isGlobal: true,
   }),
-  MongooseModule.forRoot('mongodb://192.168.13.83/See_Change_Web', {
+  // MongooseModule.forRoot('mongodb://192.168.13.83/See_Change_Web', {
+    MongooseModule.forRoot(process.env.MONGODB_URI, {
     connectionName: 'See_Change_Web',
   }),
     UserModule,

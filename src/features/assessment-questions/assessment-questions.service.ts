@@ -18,7 +18,7 @@ export class AssessmentQuestionsService {
   }
 
   async findAll(): Promise<AssessmentQuestions[]> {
-    return this.assessmentQuestionsModel.find().sort({ createdAt: -1 });
+    return this.assessmentQuestionsModel.find();
   }
 
   async findOne(id: string): Promise<AssessmentQuestions> {

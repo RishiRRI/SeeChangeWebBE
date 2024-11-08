@@ -9,18 +9,16 @@ import { AssessmentQuestionsModule } from './features/assessment-questions/asses
 import { AssessmentRecordsModule } from './features/assessment-records/assessment-records.module';
 import { PaymentsModule } from './features/payments/payments.module';
 
-
 @Module({
-  imports: [    
+  imports: [
     ConfigModule.forRoot({
-    envFilePath: '.env',
-    isGlobal: true,
-  }),
-  // MongooseModule.forRoot(process.env.See_Change_Web_DB, {
-    MongooseModule.forRoot(process.env.MONGODB_URI, {
-
-    connectionName: 'See_Change_Web',
-  }),
+      envFilePath: '.env',
+      isGlobal: true,
+    }),
+    // MongooseModule.forRoot(process.env.See_Change_Web_DB, {
+      MongooseModule.forRoot(process.env.MONGODB_URI, {
+      connectionName: 'See_Change_Web',
+    }),
     UserModule,
     AssessmentQuestionsModule,
     AssessmentRecordsModule,

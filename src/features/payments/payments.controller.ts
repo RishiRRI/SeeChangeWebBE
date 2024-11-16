@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { Response } from 'express';
 import Razorpay from 'razorpay';
-import { PaymentsService } from './payments.service'; // Import the service
+import { PaymentsService } from './payments.service'; 
 import { Payment } from './entities/payment.entity';
 
 @Controller('payments')
@@ -18,8 +18,8 @@ export class PaymentsController {
 
   constructor(private readonly paymentsService: PaymentsService) {
     this.razorpay = new Razorpay({
-      key_id: 'rzp_test_GcZZFDPP0jHtC4',
-      key_secret: '6JdtQv2u7oUw7EWziYeyoewJ',
+      key_id: 'rzp_test_u85r2jwM23xKlY',
+      key_secret: '0q84vUiUDgL7ikOtM6q8mj8i',
     });
   }
 

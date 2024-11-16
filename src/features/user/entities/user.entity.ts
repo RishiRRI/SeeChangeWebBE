@@ -38,6 +38,15 @@ export class User extends Document {
   @Prop()
   feedback: string;
 
+  @Prop({ required: true})
+  accountType: string;
+
+  @Prop({ required: true, default: "standard" })
+  version: string;
+
+  @Prop()
+  userRegistrationAccess: number;
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

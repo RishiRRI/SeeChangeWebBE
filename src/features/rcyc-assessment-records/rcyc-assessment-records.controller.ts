@@ -19,8 +19,13 @@ export class RcycAssessmentRecordsController {
   ) {}
 
   @Post()
-  async create(@Body() createAssessmentRecordDto: CreateRcycAssessmentRecordDto) {
-    return this.rcycAssessmentRecordsService.create(createAssessmentRecordDto);
+  async create(
+    @Body() createRcycAssessmentRecordDto: CreateRcycAssessmentRecordDto,
+  ) {
+    // console.log("createRcycAssessmentRecordDto is here :", createRcycAssessmentRecordDto);
+    return this.rcycAssessmentRecordsService.create(
+      createRcycAssessmentRecordDto,
+    );
   }
 
   @Get()
@@ -29,13 +34,12 @@ export class RcycAssessmentRecordsController {
   }
 
   @Get('/getAssessmentRecordListByUser/:id')
-async getAssessmentRecordListByUser(@Param('id') id: string): Promise<RcycAssessmentRecord[]> {
-  // console.log("User ID:", id); 
-  return this.rcycAssessmentRecordsService.findAssessmentRecordListByUser(id);
-}
-
-
-
+  async getAssessmentRecordListByUser(
+    @Param('id') id: string,
+  ): Promise<RcycAssessmentRecord[]> {
+    // console.log("User ID:", id);
+    return this.rcycAssessmentRecordsService.findAssessmentRecordListByUser(id);
+  }
 
   @Get(':id')
   async findOne(@Param('id') id: string): Promise<any> {
@@ -47,7 +51,10 @@ async getAssessmentRecordListByUser(@Param('id') id: string): Promise<RcycAssess
     @Param('id') id: string,
     @Body() updateAssessmentRecordDto: UpdateRcycAssessmentRecordDto,
   ): Promise<RcycAssessmentRecord> {
-    return this.rcycAssessmentRecordsService.update(id, updateAssessmentRecordDto);
+    return this.rcycAssessmentRecordsService.update(
+      id,
+      updateAssessmentRecordDto,
+    );
   }
 
   @Delete(':id')
@@ -58,5 +65,10 @@ async getAssessmentRecordListByUser(@Param('id') id: string): Promise<RcycAssess
   @Get('/getAssessmentRecord/:id')
   async getAssessmentRecord(@Param('id') id: string) {
     return this.rcycAssessmentRecordsService.findOne1(id);
+  }
+
+  @Get('/getRatingCounts/:id')
+  async getRatingCounts(@Param('id') id: string) {
+    return this.rcycAssessmentRecordsService.getRatingCounts(id);
   }
 }

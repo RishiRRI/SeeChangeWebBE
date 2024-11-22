@@ -7,7 +7,7 @@ import { RcycAssessmentQuestions } from 'src/features/rcyc-assessment-questions/
 @Schema({ timestamps: true })
 export class RcycAssessmentRecord extends Document {
   @Prop({ type: Types.ObjectId, ref: 'RcycUser', required: true })
-  rcycUser: RcycUser;
+  user: RcycUser;
 
   @Prop([
     {
@@ -21,6 +21,7 @@ export class RcycAssessmentRecord extends Document {
       ratings: [
         {
           option: { type: String, required: true },
+          value: { type: String, required: true },
           rating: { type: Number, min: 1, max: 4, required: true },
         },
       ],
@@ -28,7 +29,7 @@ export class RcycAssessmentRecord extends Document {
   ])
   responses: Array<{
     question: Types.ObjectId;
-    ratings: Array<{ option: string; rating: number }>;
+    ratings: Array<{ option: string; value: string; rating: number }>;
   }>;
 }
 

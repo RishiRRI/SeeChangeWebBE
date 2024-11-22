@@ -23,7 +23,7 @@ import { RcycPaymentsModule } from './features/rcyc-payments/rcyc-payments.modul
       MongooseModule.forRoot(process.env.MONGODB_MrRight, {
       connectionName: 'MrRight',
     }),
-    // MongooseModule.forRoot(process.env.Rcyc_DB, {
+    // MongooseModule.forRoot(process.env.Rcyc_D/B, {
       MongooseModule.forRoot(process.env.MONGODB_Rcyc, {
       connectionName: 'Rcyc',
     }),

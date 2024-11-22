@@ -22,7 +22,7 @@ export class RcycUserController {
   @Post()
   createUser(@Body() createUserDto: CreateRcycUserDto) {
     // var createUserDto: CreateUserDto = JSON.parse(payload.userModel);
-    console.log(createUserDto)
+    // console.log(createUserDto)
     return this.rcycUserService.createUser(createUserDto);
   }
 

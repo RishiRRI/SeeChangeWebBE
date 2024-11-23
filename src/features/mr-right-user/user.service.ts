@@ -85,7 +85,7 @@ export class UserService {
       .findByIdAndUpdate(id, updateUserDto, { new: true })
       .exec();
 
-      console.log(updatedUser)
+      // console.log(updatedUser)
 
   
     return updatedUser;

@@ -4,8 +4,7 @@ import mongoose, { Model } from 'mongoose';
 import { RcycUser } from './entities/rcyc-user.entity';
 import { CreateRcycUserDto } from './dto/create-rcyc-user.dto';
 import { UpdateRcycUserDto } from './dto/update-rcyc-user.dto';
-import * as bcrypt from 'bcrypt';
-
+import * as bcrypt from 'bcryptjs';
 
 @Injectable()
 export class RcycUserService {

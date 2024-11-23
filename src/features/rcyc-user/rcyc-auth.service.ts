@@ -4,8 +4,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import * as bcrypt from 'bcrypt';
-import { Request } from 'express';
+import * as bcrypt from 'bcryptjs';import { Request } from 'express';
 import { log } from 'console';
 import { UpdateController } from 'src/update/update.controller';
 import { RcycUserService } from './rcyc-user.service';

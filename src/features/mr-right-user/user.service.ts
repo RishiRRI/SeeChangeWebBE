@@ -28,6 +28,8 @@ export class UserService {
       password: hashedPassword,
     });
 
+    console.log(newUser)
+
     return newUser.save();
   }
 
@@ -82,6 +84,9 @@ export class UserService {
     const updatedUser = await this.userModel
       .findByIdAndUpdate(id, updateUserDto, { new: true })
       .exec();
+
+      console.log(updatedUser)
+
   
     return updatedUser;
   }

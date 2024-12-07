@@ -1,19 +1,19 @@
 // assessment-response.schema.ts
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { RcycUser } from 'src/features/rcyc-user/entities/rcyc-user.entity';
-import { RcycAssessmentQuestions } from 'src/features/rcyc-assessment-questions/entities/rcyc-assessment-question.entity';
+import { User } from 'src/features/mr-right/mr-right-user/entities/user.entity';
+import { AssessmentQuestions } from 'src/features/mr-right/mr-right-assessment-questions/entities/assessment-question.entity';
 
 @Schema({ timestamps: true })
-export class RcycAssessmentRecord extends Document {
-  @Prop({ type: Types.ObjectId, ref: 'RcycUser', required: true })
-  user: RcycUser;
+export class AssessmentRecord extends Document {
+  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
+  user: User;
 
   @Prop([
     {
       question: {
         type: Types.ObjectId,
-        ref: 'RcycAssessmentQuestions',
+        ref: 'AssessmentQuestions',
         required: true,
       },
       questionName: String,
@@ -33,5 +33,5 @@ export class RcycAssessmentRecord extends Document {
   }>;
 }
 
-export const RcycAssessmentRecordSchema =
-  SchemaFactory.createForClass(RcycAssessmentRecord);
+export const AssessmentRecordSchema =
+  SchemaFactory.createForClass(AssessmentRecord);

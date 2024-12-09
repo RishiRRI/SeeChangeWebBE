@@ -14,7 +14,7 @@ export class See360AssessmentQuestions extends Document {
 
   @Prop([
     {
-      _id: { type: Types.ObjectId }, 
+      _id: { type: Types.ObjectId, auto: true }, 
       option: { type: String, required: true },
       value: { type: String },
       marks: { type: Number },
